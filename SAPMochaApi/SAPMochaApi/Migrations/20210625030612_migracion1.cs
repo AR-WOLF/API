@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace SapMochaApi.Migrations
 {
-    public partial class inicio : Migration
+    public partial class migracion1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

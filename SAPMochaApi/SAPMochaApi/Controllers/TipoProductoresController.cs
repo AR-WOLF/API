@@ -12,56 +12,56 @@ namespace SapMochaApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ProductoresController : ControllerBase
+    public class TipoProductoresController : ControllerBase
     {
         private readonly sapContext _context;
 
-        public ProductoresController(sapContext context)
+        public TipoProductoresController(sapContext context)
         {
             _context = context;
         }
 
-        // GET: api/Productores
+        // GET: api/TipoProductores
         [HttpGet]
-        public IEnumerable<Productores> GetProductores()
+        public IEnumerable<TipoProductores> GetTipoProductores()
         {
-            return _context.Productores;
+            return _context.TipoProductores;
         }
 
-        // GET: api/Productores/5
+        // GET: api/TipoProductores/5
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetProductores([FromRoute] int id)
+        public async Task<IActionResult> GetTipoProductores([FromRoute] int id)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            var productores = await _context.Productores.FindAsync(id);
+            var tipoProductores = await _context.TipoProductores.FindAsync(id);
 
-            if (productores == null)
+            if (tipoProductores == null)
             {
                 return NotFound();
             }
 
-            return Ok(productores);
+            return Ok(tipoProductores);
         }
 
-        // PUT: api/Productores/5
+        // PUT: api/TipoProductores/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutProductores([FromRoute] int id, [FromBody] Productores productores)
+        public async Task<IActionResult> PutTipoProductores([FromRoute] int id, [FromBody] TipoProductores tipoProductores)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != productores.IdProveedores)
+            if (id != tipoProductores.IdTipoProductores)
             {
                 return BadRequest();
             }
 
-            _context.Entry(productores).State = EntityState.Modified;
+            _context.Entry(tipoProductores).State = EntityState.Modified;
 
             try
             {
@@ -69,7 +69,7 @@ namespace SapMochaApi.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ProductoresExists(id))
+                if (!TipoProductoresExists(id))
                 {
                     return NotFound();
                 }
@@ -82,45 +82,45 @@ namespace SapMochaApi.Controllers
             return NoContent();
         }
 
-        // POST: api/Productores
+        // POST: api/TipoProductores
         [HttpPost]
-        public async Task<IActionResult> PostProductores([FromBody] Productores productores)
+        public async Task<IActionResult> PostTipoProductores([FromBody] TipoProductores tipoProductores)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            _context.Productores.Add(productores);
+            _context.TipoProductores.Add(tipoProductores);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetProductores", new { id = productores.IdProveedores }, productores);
+            return CreatedAtAction("GetTipoProductores", new { id = tipoProductores.IdTipoProductores }, tipoProductores);
         }
 
-        // DELETE: api/Productores/5
+        // DELETE: api/TipoProductores/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteProductores([FromRoute] int id)
+        public async Task<IActionResult> DeleteTipoProductores([FromRoute] int id)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            var productores = await _context.Productores.FindAsync(id);
-            if (productores == null)
+            var tipoProductores = await _context.TipoProductores.FindAsync(id);
+            if (tipoProductores == null)
             {
                 return NotFound();
             }
 
-            _context.Productores.Remove(productores);
+            _context.TipoProductores.Remove(tipoProductores);
             await _context.SaveChangesAsync();
 
-            return Ok(productores);
+            return Ok(tipoProductores);
         }
 
-        private bool ProductoresExists(int id)
+        private bool TipoProductoresExists(int id)
         {
-            return _context.Productores.Any(e => e.IdProveedores == id);
+            return _context.TipoProductores.Any(e => e.IdTipoProductores == id);
         }
     }
 }

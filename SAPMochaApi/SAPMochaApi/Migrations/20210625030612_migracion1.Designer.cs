@@ -8,8 +8,8 @@ using SAPMochaApi.Models;
 namespace SapMochaApi.Migrations
 {
     [DbContext(typeof(sapContext))]
-    [Migration("20210624052746_inicio")]
-    partial class inicio
+    [Migration("20210625030612_migracion1")]
+    partial class migracion1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

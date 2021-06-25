@@ -45,3 +45,20 @@ C:\Users\PC\Downloads\SAPMochaApi\SAPMochaApi\SapMochaApi\obj\Debug\netcoreapp2.
 C:\Users\PC\Downloads\SAPMochaApi\SAPMochaApi\SapMochaApi\obj\Debug\netcoreapp2.1\SapMochaApi.RazorTargetAssemblyInfo.cache
 C:\Users\PC\Downloads\SAPMochaApi\SAPMochaApi\SapMochaApi\obj\Debug\netcoreapp2.1\SapMochaApi.dll
 C:\Users\PC\Downloads\SAPMochaApi\SAPMochaApi\SapMochaApi\obj\Debug\netcoreapp2.1\SapMochaApi.pdb
+C:\Users\RAW\Desktop\Nueva carpeta\API\SAPMochaApi\SapMochaApi\bin\Debug\netcoreapp2.1\appsettings.Development.json
+C:\Users\RAW\Desktop\Nueva carpeta\API\SAPMochaApi\SapMochaApi\bin\Debug\netcoreapp2.1\appsettings.json
+C:\Users\RAW\Desktop\Nueva carpeta\API\SAPMochaApi\SapMochaApi\bin\Debug\netcoreapp2.1\SapMochaApi.deps.json
+C:\Users\RAW\Desktop\Nueva carpeta\API\SAPMochaApi\SapMochaApi\bin\Debug\netcoreapp2.1\SapMochaApi.runtimeconfig.json
+C:\Users\RAW\Desktop\Nueva carpeta\API\SAPMochaApi\SapMochaApi\bin\Debug\netcoreapp2.1\SapMochaApi.runtimeconfig.dev.json
+C:\Users\RAW\Desktop\Nueva carpeta\API\SAPMochaApi\SapMochaApi\bin\Debug\netcoreapp2.1\SapMochaApi.dll
+C:\Users\RAW\Desktop\Nueva carpeta\API\SAPMochaApi\SapMochaApi\bin\Debug\netcoreapp2.1\SapMochaApi.pdb
+C:\Users\RAW\Desktop\Nueva carpeta\API\SAPMochaApi\SapMochaApi\obj\Debug\netcoreapp2.1\SapMochaApi.AssemblyInfoInputs.cache
+C:\Users\RAW\Desktop\Nueva carpeta\API\SAPMochaApi\SapMochaApi\obj\Debug\netcoreapp2.1\SapMochaApi.AssemblyInfo.cs
+C:\Users\RAW\Desktop\Nueva carpeta\API\SAPMochaApi\SapMochaApi\obj\Debug\netcoreapp2.1\SapMochaApi.csproj.CoreCompileInputs.cache
+C:\Users\RAW\Desktop\Nueva carpeta\API\SAPMochaApi\SapMochaApi\obj\Debug\netcoreapp2.1\SapMochaApi.RazorAssemblyInfo.cache
+C:\Users\RAW\Desktop\Nueva carpeta\API\SAPMochaApi\SapMochaApi\obj\Debug\netcoreapp2.1\SapMochaApi.RazorAssemblyInfo.cs
+C:\Users\RAW\Desktop\Nueva carpeta\API\SAPMochaApi\SapMochaApi\obj\Debug\netcoreapp2.1\SapMochaApi.RazorTargetAssemblyInfo.cache
+C:\Users\RAW\Desktop\Nueva carpeta\API\SAPMochaApi\SapMochaApi\obj\Debug\netcoreapp2.1\SapMochaApi.dll
+C:\Users\RAW\Desktop\Nueva carpeta\API\SAPMochaApi\SapMochaApi\obj\Debug\netcoreapp2.1\SapMochaApi.pdb
+C:\Users\RAW\Desktop\Nueva carpeta\API\SAPMochaApi\SapMochaApi\obj\Debug\netcoreapp2.1\SapMochaApi.genruntimeconfig.cache
+C:\Users\RAW\Desktop\Nueva carpeta\API\SAPMochaApi\SapMochaApi\obj\Debug\netcoreapp2.1\SapMochaApi.csproj.AssemblyReference.cache

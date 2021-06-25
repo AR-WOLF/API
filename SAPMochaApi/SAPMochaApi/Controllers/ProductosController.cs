@@ -12,56 +12,56 @@ namespace SapMochaApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ProductoresController : ControllerBase
+    public class ProductosController : ControllerBase
     {
         private readonly sapContext _context;
 
-        public ProductoresController(sapContext context)
+        public ProductosController(sapContext context)
         {
             _context = context;
         }
 
-        // GET: api/Productores
+        // GET: api/Productos
         [HttpGet]
-        public IEnumerable<Productores> GetProductores()
+        public IEnumerable<Productos> GetProductos()
         {
-            return _context.Productores;
+            return _context.Productos;
         }
 
-        // GET: api/Productores/5
+        // GET: api/Productos/5
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetProductores([FromRoute] int id)
+        public async Task<IActionResult> GetProductos([FromRoute] int id)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            var productores = await _context.Productores.FindAsync(id);
+            var productos = await _context.Productos.FindAsync(id);
 
-            if (productores == null)
+            if (productos == null)
             {
                 return NotFound();
             }
 
-            return Ok(productores);
+            return Ok(productos);
         }
 
-        // PUT: api/Productores/5
+        // PUT: api/Productos/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutProductores([FromRoute] int id, [FromBody] Productores productores)
+        public async Task<IActionResult> PutProductos([FromRoute] int id, [FromBody] Productos productos)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != productores.IdProveedores)
+            if (id != productos.IdProductos)
             {
                 return BadRequest();
             }
 
-            _context.Entry(productores).State = EntityState.Modified;
+            _context.Entry(productos).State = EntityState.Modified;
 
             try
             {
@@ -69,7 +69,7 @@ namespace SapMochaApi.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ProductoresExists(id))
+                if (!ProductosExists(id))
                 {
                     return NotFound();
                 }
@@ -82,45 +82,45 @@ namespace SapMochaApi.Controllers
             return NoContent();
         }
 
-        // POST: api/Productores
+        // POST: api/Productos
         [HttpPost]
-        public async Task<IActionResult> PostProductores([FromBody] Productores productores)
+        public async Task<IActionResult> PostProductos([FromBody] Productos productos)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            _context.Productores.Add(productores);
+            _context.Productos.Add(productos);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetProductores", new { id = productores.IdProveedores }, productores);
+            return CreatedAtAction("GetProductos", new { id = productos.IdProductos }, productos);
         }
 
-        // DELETE: api/Productores/5
+        // DELETE: api/Productos/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteProductores([FromRoute] int id)
+        public async Task<IActionResult> DeleteProductos([FromRoute] int id)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            var productores = await _context.Productores.FindAsync(id);
-            if (productores == null)
+            var productos = await _context.Productos.FindAsync(id);
+            if (productos == null)
             {
                 return NotFound();
             }
 
-            _context.Productores.Remove(productores);
+            _context.Productos.Remove(productos);
             await _context.SaveChangesAsync();
 
-            return Ok(productores);
+            return Ok(productos);
         }
 
-        private bool ProductoresExists(int id)
+        private bool ProductosExists(int id)
         {
-            return _context.Productores.Any(e => e.IdProveedores == id);
+            return _context.Productos.Any(e => e.IdProductos == id);
         }
     }
 }
