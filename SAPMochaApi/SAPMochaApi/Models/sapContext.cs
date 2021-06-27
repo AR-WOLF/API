@@ -20,6 +20,7 @@ namespace SAPMochaApi.Models
         public virtual DbSet<TipoProductores> TipoProductores { get; set; }
         public virtual DbSet<Categorias> Categorias { get; set; }
         public virtual DbSet<Productos> Productos { get; set; }
+        public virtual DbSet<DetalleCategorias> DetalleCategorias { get; set; }
 
     }
 }

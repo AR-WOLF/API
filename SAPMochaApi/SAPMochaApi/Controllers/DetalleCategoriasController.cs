@@ -12,56 +12,56 @@ namespace SapMochaApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ProductoresController : ControllerBase
+    public class DetalleCategoriasController : ControllerBase
     {
         private readonly sapContext _context;
 
-        public ProductoresController(sapContext context)
+        public DetalleCategoriasController(sapContext context)
         {
             _context = context;
         }
 
-        // GET: api/Productores
+        // GET: api/DetalleCategorias
         [HttpGet]
-        public IEnumerable<Productores> GetProductores()
+        public IEnumerable<DetalleCategorias> GetDetalleCategorias()
         {
-            return _context.Productores;
+            return _context.DetalleCategorias;
         }
 
-        // GET: api/Productores/5
+        // GET: api/DetalleCategorias/5
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetProductores([FromRoute] int id)
+        public async Task<IActionResult> GetDetalleCategorias([FromRoute] int id)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            var productores = await _context.Productores.FindAsync(id);
+            var detalleCategorias = await _context.DetalleCategorias.FindAsync(id);
 
-            if (productores == null)
+            if (detalleCategorias == null)
             {
                 return NotFound();
             }
 
-            return Ok(productores);
+            return Ok(detalleCategorias);
         }
 
-        // PUT: api/Productores/5
+        // PUT: api/DetalleCategorias/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutProductores([FromRoute] int id, [FromBody] Productores productores)
+        public async Task<IActionResult> PutDetalleCategorias([FromRoute] int id, [FromBody] DetalleCategorias detalleCategorias)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != productores.IdProductores)
+            if (id != detalleCategorias.IdDetalleCategorias)
             {
                 return BadRequest();
             }
 
-            _context.Entry(productores).State = EntityState.Modified;
+            _context.Entry(detalleCategorias).State = EntityState.Modified;
 
             try
             {
@@ -69,7 +69,7 @@ namespace SapMochaApi.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ProductoresExists(id))
+                if (!DetalleCategoriasExists(id))
                 {
                     return NotFound();
                 }
@@ -82,45 +82,45 @@ namespace SapMochaApi.Controllers
             return NoContent();
         }
 
-        // POST: api/Productores
+        // POST: api/DetalleCategorias
         [HttpPost]
-        public async Task<IActionResult> PostProductores([FromBody] Productores productores)
+        public async Task<IActionResult> PostDetalleCategorias([FromBody] DetalleCategorias detalleCategorias)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            _context.Productores.Add(productores);
+            _context.DetalleCategorias.Add(detalleCategorias);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetProductores", new { id = productores.IdProductores }, productores);
+            return CreatedAtAction("GetDetalleCategorias", new { id = detalleCategorias.IdDetalleCategorias }, detalleCategorias);
         }
 
-        // DELETE: api/Productores/5
+        // DELETE: api/DetalleCategorias/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteProductores([FromRoute] int id)
+        public async Task<IActionResult> DeleteDetalleCategorias([FromRoute] int id)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            var productores = await _context.Productores.FindAsync(id);
-            if (productores == null)
+            var detalleCategorias = await _context.DetalleCategorias.FindAsync(id);
+            if (detalleCategorias == null)
             {
                 return NotFound();
             }
 
-            _context.Productores.Remove(productores);
+            _context.DetalleCategorias.Remove(detalleCategorias);
             await _context.SaveChangesAsync();
 
-            return Ok(productores);
+            return Ok(detalleCategorias);
         }
 
-        private bool ProductoresExists(int id)
+        private bool DetalleCategoriasExists(int id)
         {
-            return _context.Productores.Any(e => e.IdProductores == id);
+            return _context.DetalleCategorias.Any(e => e.IdDetalleCategorias == id);
         }
     }
 }

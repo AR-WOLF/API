@@ -8,7 +8,7 @@ using SAPMochaApi.Models;
 namespace SapMochaApi.Migrations
 {
     [DbContext(typeof(sapContext))]
-    [Migration("20210625030612_migracion1")]
+    [Migration("20210627032527_migracion1")]
     partial class migracion1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -36,9 +36,35 @@ namespace SapMochaApi.Migrations
                     b.ToTable("Categorias");
                 });
 
+            modelBuilder.Entity("SapMochaApi.Models.DetalleCategorias", b =>
+                {
+                    b.Property<int>("IdDetalleCategorias")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("IdProductores");
+
+                    b.Property<int>("IdProductos");
+
+                    b.Property<decimal>("PrecioDocena")
+                        .HasColumnType("decimal(8,2)");
+
+                    b.Property<decimal>("PrecioUnidad")
+                        .HasColumnType("decimal(8,2)");
+
+                    b.Property<int>("Stock");
+
+                    b.HasKey("IdDetalleCategorias");
+
+                    b.HasIndex("IdProductores");
+
+                    b.HasIndex("IdProductos");
+
+                    b.ToTable("DetalleCategorias");
+                });
+
             modelBuilder.Entity("SapMochaApi.Models.Productores", b =>
                 {
-                    b.Property<int>("IdProveedores")
+                    b.Property<int>("IdProductores")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("Apellidos");
@@ -77,7 +103,7 @@ namespace SapMochaApi.Migrations
 
                     b.Property<string>("Telefono");
 
-                    b.HasKey("IdProveedores");
+                    b.HasKey("IdProductores");
 
                     b.HasIndex("IdTipoProductores");
 
@@ -94,14 +120,6 @@ namespace SapMochaApi.Migrations
                     b.Property<int>("IdCategorias");
 
                     b.Property<string>("NombreProducto");
-
-                    b.Property<decimal>("PrecioDocena")
-                        .HasColumnType("decimal(8,2)");
-
-                    b.Property<decimal>("PrecioUnidad")
-                        .HasColumnType("decimal(8,2)");
-
-                    b.Property<int>("Stock");
 
                     b.Property<string>("Talla");
 
@@ -157,6 +175,19 @@ namespace SapMochaApi.Migrations
                     b.HasOne("SapMochaApi.Models.TipoProductores", "tipoproductores")
                         .WithMany()
                         .HasForeignKey("IdTipoProductores")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("SapMochaApi.Models.DetalleCategorias", b =>
+                {
+                    b.HasOne("SapMochaApi.Models.Productores", "Productores")
+                        .WithMany()
+                        .HasForeignKey("IdProductores")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("SapMochaApi.Models.Productos", "Productos")
+                        .WithMany()
+                        .HasForeignKey("IdProductos")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

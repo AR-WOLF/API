@@ -10,7 +10,7 @@ namespace SapMochaApi.Models
     public class Productores
     {
         [Key]
-        public int IdProveedores { get; set; }
+        public int IdProductores { get; set; }
 
         public string Cedula { get; set; }
         public string Nombres { get; set; }

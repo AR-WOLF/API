@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\RAW\\Desktop\\Nueva carpeta\\API\\SAPMochaApi\\SapMochaApi\\SapMochaApi.csproj": {}
+    "C:\\Users\\Rommel\\Desktop\\API\\SAPMochaApi\\SapMochaApi\\SapMochaApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\RAW\\Desktop\\Nueva carpeta\\API\\SAPMochaApi\\SapMochaApi\\SapMochaApi.csproj": {
+    "C:\\Users\\Rommel\\Desktop\\API\\SAPMochaApi\\SapMochaApi\\SapMochaApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\RAW\\Desktop\\Nueva carpeta\\API\\SAPMochaApi\\SapMochaApi\\SapMochaApi.csproj",
+        "projectUniqueName": "C:\\Users\\Rommel\\Desktop\\API\\SAPMochaApi\\SapMochaApi\\SapMochaApi.csproj",
         "projectName": "SapMochaApi",
-        "projectPath": "C:\\Users\\RAW\\Desktop\\Nueva carpeta\\API\\SAPMochaApi\\SapMochaApi\\SapMochaApi.csproj",
-        "packagesPath": "C:\\Users\\RAW\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\RAW\\Desktop\\Nueva carpeta\\API\\SAPMochaApi\\SapMochaApi\\obj\\",
+        "projectPath": "C:\\Users\\Rommel\\Desktop\\API\\SAPMochaApi\\SapMochaApi\\SapMochaApi.csproj",
+        "packagesPath": "C:\\Users\\Rommel\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Rommel\\Desktop\\API\\SAPMochaApi\\SapMochaApi\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\RAW\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Rommel\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

@@ -65,7 +65,7 @@ namespace SapMochaApi.Migrations
                 name: "Productores",
                 columns: table => new
                 {
-                    IdProveedores = table.Column<int>(nullable: false)
+                    IdProductores = table.Column<int>(nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Cedula = table.Column<string>(nullable: true),
                     Nombres = table.Column<string>(nullable: true),
@@ -88,7 +88,7 @@ namespace SapMochaApi.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Productores", x => x.IdProveedores);
+                    table.PrimaryKey("PK_Productores", x => x.IdProductores);
                     table.ForeignKey(
                         name: "FK_Productores_TipoProductores_IdTipoProductores",
                         column: x => x.IdTipoProductores,
@@ -105,9 +105,6 @@ namespace SapMochaApi.Migrations
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     NombreProducto = table.Column<string>(nullable: true),
                     Unidad = table.Column<string>(nullable: true),
-                    Stock = table.Column<int>(nullable: false),
-                    PrecioUnidad = table.Column<decimal>(type: "decimal(8,2)", nullable: false),
-                    PrecioDocena = table.Column<decimal>(type: "decimal(8,2)", nullable: false),
                     Descripcion = table.Column<string>(nullable: true),
                     Talla = table.Column<string>(nullable: true),
                     IdCategorias = table.Column<int>(nullable: false)
@@ -123,10 +120,49 @@ namespace SapMochaApi.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "DetalleCategorias",
+                columns: table => new
+                {
+                    IdDetalleCategorias = table.Column<int>(nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    IdProductos = table.Column<int>(nullable: false),
+                    Stock = table.Column<int>(nullable: false),
+                    PrecioUnidad = table.Column<decimal>(type: "decimal(8,2)", nullable: false),
+                    PrecioDocena = table.Column<decimal>(type: "decimal(8,2)", nullable: false),
+                    IdProductores = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_DetalleCategorias", x => x.IdDetalleCategorias);
+                    table.ForeignKey(
+                        name: "FK_DetalleCategorias_Productores_IdProductores",
+                        column: x => x.IdProductores,
+                        principalTable: "Productores",
+                        principalColumn: "IdProductores",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_DetalleCategorias_Productos_IdProductos",
+                        column: x => x.IdProductos,
+                        principalTable: "Productos",
+                        principalColumn: "IdProductos",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_Categorias_IdTipoProductores",
                 table: "Categorias",
                 column: "IdTipoProductores");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_DetalleCategorias_IdProductores",
+                table: "DetalleCategorias",
+                column: "IdProductores");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_DetalleCategorias_IdProductos",
+                table: "DetalleCategorias",
+                column: "IdProductos");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Productores_IdTipoProductores",
@@ -142,13 +178,16 @@ namespace SapMochaApi.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
+                name: "DetalleCategorias");
+
+            migrationBuilder.DropTable(
+                name: "Usuarios");
+
+            migrationBuilder.DropTable(
                 name: "Productores");
 
             migrationBuilder.DropTable(
                 name: "Productos");
-
-            migrationBuilder.DropTable(
-                name: "Usuarios");
 
             migrationBuilder.DropTable(
                 name: "Categorias");
