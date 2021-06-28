@@ -25,7 +25,7 @@ namespace SapMochaApi.Controllers
         [HttpGet]
         public IEnumerable<DetalleCategorias> GetDetalleCategorias()
         {
-            return _context.DetalleCategorias;
+            return _context.DetalleCategorias.Include(x=>x.Productos).Include(x=>x.Productores).Include(x=>x.Productos.categorias).Include(x=>x.Productos.categorias.tipoproductores);
         }
 
         // GET: api/DetalleCategorias/5
@@ -37,7 +37,7 @@ namespace SapMochaApi.Controllers
                 return BadRequest(ModelState);
             }
 
-            var detalleCategorias = await _context.DetalleCategorias.FindAsync(id);
+            var detalleCategorias = await _context.DetalleCategorias.Include(x=>x.Productos).Include(x=>x.Productores).FirstAsync(x=>x.IdDetalleCategorias==id);
 
             if (detalleCategorias == null)
             {
