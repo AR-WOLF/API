@@ -23,14 +23,11 @@ namespace SapMochaApi.Models
         public int Edad { get; set; }
         public string Sexo { get; set; }
         public string PaginaWeb { get; set; }
-        public string Cargo { get; set; }
         public bool Organizacion { get; set; }
         public string DetalleOrganizacion { get; set; }
         public bool Discapacidad { get; set; }
         public string DetalleDiscapacidad { get; set; }
         public int PorcentajeDiscapacidad { get; set; }
-
-
         public int IdTipoProductores { get; set; }
         public TipoProductores tipoproductores { get; set; }
        
